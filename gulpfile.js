@@ -8,7 +8,7 @@ var del          = require('del');
 var gulp         = require('gulp');
 var imagemin     = require('gulp-imagemin');
 var jade         = require('gulp-jade');
-var notify      = require('gulp-notify');
+var notify       = require('gulp-notify');
 var plumber      = require('gulp-plumber');
 var rename       = require("gulp-rename");
 var sass         = require('gulp-sass');
@@ -33,11 +33,10 @@ gulp.task('styles', function(){
   gulp.src('styles/*.scss')
   .pipe(plumber({ errorHandler: onError }))
   .pipe(sourcemaps.init())
-  .pipe(sass({indentedSyntax: true}))
+  .pipe(sass({outputStyle: 'expanded'}))
   .pipe(autoprefixer({
     browsers: ['last 5 versions'],
     cascade: false}))
-  .pipe(cleanCSS())
   .pipe(sourcemaps.write('.'))
   .pipe(rename({ suffix: '.min'}))
   .pipe(gulp.dest('build/css'));
