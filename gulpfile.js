@@ -7,7 +7,7 @@ var concat       = require('gulp-concat');
 var del          = require('del');
 var gulp         = require('gulp');
 var imagemin     = require('gulp-imagemin');
-var jade         = require('gulp-jade');
+var pug         = require('gulp-pug');
 var notify       = require('gulp-notify');
 var plumber      = require('gulp-plumber');
 var rename       = require("gulp-rename");
@@ -43,9 +43,9 @@ gulp.task('styles', function(){
 });
 
 gulp.task('templates', function(){
-  gulp.src('templates/*.jade')
+  gulp.src('templates/*.pug')
   .pipe(plumber({ errorHandler: onError }))
-  .pipe(jade())
+  .pipe(pug())
   .pipe(gulp.dest('build/'));
 });
 
@@ -88,7 +88,7 @@ gulp.task('default',['copy-glyphicon-font'], function() {
 
 gulp.task('watch', function(){
   gulp.watch('styles/**/*',      ['styles']);
-  gulp.watch('templates/*.jade', ['templates']);
+  gulp.watch('templates/*.pug', ['templates']);
   gulp.watch('js/*.js',          ['scripts']);
   gulp.watch('img/**/*',         ['images']);
 
