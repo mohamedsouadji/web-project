@@ -47,31 +47,16 @@ First, clone the project:
 $ git clone https://github.com/Errec/pug-sass-boilerplate-starter-kit.git <my-project-name>
 ```
 
-Initialize `npm` on `<my-project-name>` directory
+Install dependencies
 
 ```bash
-$ cd <my-project-name>
-$ npm init
+$ npm install
 ```
 
-Install `Gulp` locally
+Finally install `Bower`dependencies
 
 ```bash
-$ npm install gulp --save-dev
-```
-
-Then install `Gulp` required dependencies
-
-```bash
-$ sudo npm install gulp-uglify browser-sync gulp-plumber gulp-autoprefixer gulp-sass gulp-jade gulp-imagemin del gulp-cache gulp-clean-css gulp-sourcemaps gulp-concat beeper gulp-util gulp-rename gulp-notify --save-dev
-```
-
-Finally initialize `Bower` and install the dependencies
-
-```bash
-$ bower init
-$ bower install jquery --save
-$ bower install bootstrap --save
+$ bower install
 ```
 
 ### Running Your Local Server With Gulp
@@ -106,7 +91,7 @@ The structure presented in this boilerplate is grouped primarily by folder conte
 │   ├── variables/              # Store sass variables files
 │   └── main.scss               # Index Sass goes here
 ├── templates/                  # Main folder for jade template files
-│   └── index.jade              # Index jade/pug markup goes here
+│   └── index.pug               # Index pug markup goes here
 ├── .bowerrc                    # Change bower library destination path from its default
 └── gulpfile.js                 # Setup Gulp tasks
 ```
